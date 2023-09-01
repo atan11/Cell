@@ -73,13 +73,16 @@ public class Cell {
         return this.id;
     }
 
-    public static void interactNeighbors(int neighbors[]) {
-
-
-
+    public static void interactNeighbors(String neighbors[]) {
+        ArrayList<String> adjacent = new ArrayList<String>();
+        for (int i=0; i<neighbors.length; i++){
+            adjacent.add(neighbors[i]);
+        }
+        System.out.println(adjacent.size());
     }
 
     public static void main(String[] args) {
+        String [] neighbors = {"bacteria", "bacteria", "virus"};
         //Cell strength, position, and id
         Cell a = new Cell(-1,-1,-1,-1);
 
@@ -101,6 +104,9 @@ public class Cell {
         interaction.add(c.types);
 
         System.out.println(interaction);
+
+        //Adjacent Cells
+        interactNeighbors(neighbors);
     }
 
 }
